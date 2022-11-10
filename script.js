@@ -1,5 +1,5 @@
 
-
+// Function used to return a random rock,paper,scissors value to be used as the computers' choice.
 function getComputerChoice()
 {
     let choices = ['rock', 'paper', 'scissors']
