@@ -32,7 +32,7 @@ function playRound(playerSelection)
     // else computer has won the round
     else
     {
-        // Display result message that player has lost
+        // Display result message that player has lost 
         result = ('You loose! ' + computerSelection + ' beats ' + playerSelectionLowerCase);
     }
     
