@@ -1,12 +1,14 @@
+// Declaring and setting all DOM Objects
 const optionBtn = document.querySelectorAll('div.optionBtn button');
 const roundResults = document.querySelector('#roundResults');
 const playerPoints = document.querySelector('#playerScore');
 const computerPoints = document.querySelector('#computerScore');
 const resetBtn = document.querySelector('#reset');
 
-//refresh page for new game
+// Refresh page for new game
 resetBtn.addEventListener('click',() => location.reload());
-  
+
+// Creating click event listeners for all choice buttons
 optionBtn.forEach(button => { button.addEventListener('click', getPlayerChoice) });
 
 let computerChoices = [{choice: 'Rock', value: 0}, {choice: 'Paper', value: 1}, {choice: 'Scissors', value: 2}];
@@ -14,11 +16,13 @@ let playerScore = 0;
 let compScore = 0;
 let playerChoice;
 
+// Function to generate a random computer choice
 function computerPlay () {
   let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
   return result;
 }
 
+// function that plays a round, takes in player selection and computer selection as params
 function playRound (playerSelection, computerSelection) {
   let roundWinCombo = `${playerSelection}-${computerSelection.value}`;
   let playerWinCombo = ['1-0', '0-2', '2-1'];
@@ -58,6 +62,7 @@ function updateWinner(winner){
   roundResults.textContent = winnerResults[winner][0];
   roundResults.style.color = winnerResults[winner][1];
 
+  // remove event listener for choices buttons
   optionBtn.forEach(button => {
     button.removeEventListener('click', getPlayerChoice);
   });
