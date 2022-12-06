@@ -1,3 +1,5 @@
+// Aaron Leblanc, 2022-12-06, The Odin Project: Rock, Paper Scissors Exercise
+
 // Declaring and setting all DOM Objects
 const optionBtn = document.querySelectorAll('div.optionBtn button');
 const roundResults = document.querySelector('#roundResults');
